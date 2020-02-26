@@ -23,6 +23,8 @@ public class CommonMethod {
         Thread thread = new Thread(new MyRunnableThread());
         //设置线程名称
         thread.setName("LearningThread");
+        //设置线程优先级
+        thread.setPriority(Thread.MAX_PRIORITY);
         thread.start();
 
         for(int i =1; i <= 100; i++){
