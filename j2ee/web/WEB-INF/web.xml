@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0"
+         metadata-complete="false">
+
+    <context-param>
+        <param-name>year</param-name>
+        <param-value>2020</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>helloServlet</servlet-name>
+        <servlet-class>com.peter._01_myservlet.HelloServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>myServletConfig</servlet-name>
+        <servlet-class>com.peter._02_servletconfig.MyServletConfig</servlet-class>
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>Peter</param-value>
+        </init-param>
+        <init-param>
+            <param-name>age</param-name>
+            <param-value>18</param-value>
+        </init-param>
+    </servlet>
+    <servlet>
+        <servlet-name>myServletContext</servlet-name>
+        <servlet-class>com.peter._03_servletContext.MyServletContext</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BaseHttpServlet</servlet-name>
+        <servlet-class>com.peter._04_base.BaseHttpServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Request1Servlet</servlet-name>
+        <servlet-class>com.peter._05_请求转发.Request1Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Reponse1Servlet</servlet-name>
+        <servlet-class>com.peter._06_请求重定向.Reponse1Servlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>uploadFile</servlet-name>
+        <servlet-class>com.peter._08_上传下载.UploadFileServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>downLoad</servlet-name>
+        <servlet-class>com.peter._08_上传下载.DownLoadFileServlet</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>downLoad</servlet-name>
+        <url-pattern>/download</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>uploadFile</servlet-name>
+        <url-pattern>/upload</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Reponse1Servlet</servlet-name>
+        <url-pattern>/response1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Request1Servlet</servlet-name>
+        <url-pattern>/request1</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>helloServlet</servlet-name>
+        <url-pattern>/hello</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>myServletConfig</servlet-name>
+        <url-pattern>/config</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>myServletContext</servlet-name>
+        <url-pattern>/context</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BaseHttpServlet</servlet-name>
+        <url-pattern>/base</url-pattern>
+    </servlet-mapping>
+
+    <listener>
+        <listener-class>com.peter._07_listener.MyListener</listener-class>
+    </listener>
+</web-app>
